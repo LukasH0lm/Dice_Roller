@@ -1,6 +1,6 @@
 from tkinter import *
 from random import seed
-from random import choice
+from random import sample
 
 root = Tk()
 root.title('Dice_Roller')
@@ -9,21 +9,23 @@ root.geometry("400x400")
 
 seed(1)
 
+#def setdie(selected_die):
+#    user_die= 
+
 def dice_roller():
-    sequence = [i for i in range(die.get())]
-    rolls = choice(sequence)
+    sequence = [i for i in range(die.get())] *10
+    rolls = sample(sequence, e.get())
     myLabel.config(text=rolls)
     return 0
 
 die = IntVar()
-die.set(6)
 
-
-
-drop = OptionMenu(root, die, 4, 6, 12, 20)
+drop = OptionMenu(root, die, 4, 6, 12, 20,)
 drop.pack()
 
-e = Entry(root, width=3)
+die.set(6)
+
+e = Scale(root, from_=1, to=50, orient=HORIZONTAL)
 e.pack()
 
 myButton = Button(root, text="Roll!", command = dice_roller)
