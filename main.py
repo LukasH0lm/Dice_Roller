@@ -9,12 +9,10 @@ root.geometry("400x400")
 
 seed(1)
 
-#def setdie(selected_die):
-#    user_die= 
-
 def dice_roller():
-    sequence = [i for i in range(die.get())] *10
-    rolls = sample(sequence, e.get())
+    possible_rolls = [i for i in range(die.get())] *10
+    possible_rolls = [i for i in possible_rolls if i != 0]
+    rolls = sample(possible_rolls, e.get())
     myLabel.config(text=rolls)
     return 0
 
