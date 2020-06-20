@@ -33,6 +33,5 @@ myLabel = Label(root, text="Dice rolls wil appear here")
 myLabel.pack()
 
 
-
 root.mainloop()
 
